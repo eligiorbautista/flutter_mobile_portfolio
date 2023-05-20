@@ -160,7 +160,7 @@ ScrollController contactScreenController = ScrollController();
 
 // HOME SCREEEN | PAGES
 Widget homeScreen() {
-  return SingleChildScrollView(
+  return const SingleChildScrollView(
     scrollDirection: Axis.vertical,
     child: Card(
       color: Colors.transparent,
@@ -169,12 +169,12 @@ Widget homeScreen() {
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
+            children: [
               SizedBox(
                 height: 40,
               ),
               CircleAvatar(
-                backgroundImage: AssetImage('assets/images/eli9.jpg'),
+                backgroundImage: AssetImage('assets/images/eli0.jpg'),
                 maxRadius: 90,
               ),
               SizedBox(
@@ -208,9 +208,9 @@ Widget aboutScreen() {
   return SingleChildScrollView(
     scrollDirection: Axis.vertical,
     controller: aboutScreenController,
-    child: Card(
+    child: const Card(
       color: Color.fromARGB(166, 255, 255, 255),
-      shape: const RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(10))),
       elevation: 5,
       shadowColor: Colors.black,
@@ -219,7 +219,7 @@ Widget aboutScreen() {
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
+            children: [
               SizedBox(
                 height: 20,
               ),
@@ -473,6 +473,90 @@ Widget projectsScreen() {
           ),
         ),
       ),
+      const SizedBox(
+        height: 10,
+      ),
+      Card(
+        shadowColor: Colors.black,
+        elevation: 10,
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(25.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Text(
+                "Task Buddy\n(Dart, Flutter, Hive)",
+                style: TextStyle(
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "klavika",
+                  fontSize: 18,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(5),
+                child: Image.asset(
+                  'assets/images/tb-2.png',
+                  fit: BoxFit.contain,
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
+                "\nTask Buddy, a user-friendly mobile application that makes your life easier. With Task Buddy's simple and straightforward layout, you can easily manage your to-do list, maintain organization, and increase productivity. Say good-bye to time-consuming duties and hello to a more streamlined and effective approach. ",
+                style: TextStyle(
+                  fontFamily: "klavika",
+                  fontSize: 16,
+                ),
+                textAlign: TextAlign.start,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 25,
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        launchWeb(
+                            "https://github.com/eligiorbautista/flutter_web_portfolio");
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(255, 32, 32, 30),
+                      ),
+                      child: const Text("Repository"),
+                    ),
+                  ),
+                  const Text(" | "),
+                  SizedBox(
+                    height: 25,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        launchWeb(
+                            "https://www.mediafire.com/file/ttccpzsw869kdt7/Task_Buddy.apk/file");
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(255, 32, 32, 30),
+                      ),
+                      child: const Text("Download"),
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
     ]),
   );
 }
@@ -647,9 +731,9 @@ class _ContactScreenState extends State<ContactScreen> {
                 const SizedBox(
                   height: 30,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       "CONTACT INFORMATION",
                       style: TextStyle(
@@ -663,9 +747,9 @@ class _ContactScreenState extends State<ContactScreen> {
                 const SizedBox(
                   height: 10,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
+                  children: [
                     Icon(Icons.location_on),
                     Text(
                       " Tayabas, Quezon Province",
@@ -679,9 +763,9 @@ class _ContactScreenState extends State<ContactScreen> {
                 const SizedBox(
                   height: 10,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
+                  children: [
                     Icon(Icons.phone),
                     Text(
                       " +639338629001",
@@ -695,9 +779,9 @@ class _ContactScreenState extends State<ContactScreen> {
                 const SizedBox(
                   height: 10,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
+                  children: [
                     Icon(Icons.mail),
                     Text(
                       "  it.elibautista@gmail.com",
@@ -713,8 +797,8 @@ class _ContactScreenState extends State<ContactScreen> {
                 const SizedBox(
                   height: 30,
                 ),
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     Text(
                       "SOCIALS",
                       style: TextStyle(
